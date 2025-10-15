@@ -2,13 +2,19 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import Banner from './components/Banner'
 import Header from './components/Header'
+import Card from './components/Card'
 
 import { GlobalCss } from './styles/styles'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Banner />
+    element: (
+      <>
+        <Card />
+        <Banner />
+      </>
+    )
   }
 ])
 
