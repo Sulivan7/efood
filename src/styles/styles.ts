@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
-export const Colors = {
+export const colors = {
   pink: '#E66767',
   peach: '#FFEBD9',
   white: '#FFFFFF',
@@ -16,8 +16,8 @@ export const GlobalCss = createGlobalStyle`
   list-style: none;
 }
 body {
-  background-color: ${Colors.cream};
-  color: ${Colors.pink};
+  background-color: ${colors.cream};
+  color: ${colors.pink};
 }
 
 .container {
