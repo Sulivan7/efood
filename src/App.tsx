@@ -1,3 +1,5 @@
+import Header from './components/Header'
+
 import { GlobalCss } from './styles/styles'
 
 function App() {
@@ -5,7 +7,7 @@ function App() {
     <>
       <GlobalCss />
       <div>
-        <h1>Hello World</h1>
+        <Header />
       </div>
     </>
   )
