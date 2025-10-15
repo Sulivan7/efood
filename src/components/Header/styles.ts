@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Colors } from '../../styles/styles'
+import { colors } from '../../styles/styles'
 
 export const HeaderBar = styled.header`
   width: 100%;
@@ -8,7 +8,7 @@ export const HeaderBar = styled.header`
   align-items: center;
 
   a {
-    color: ${Colors.pink};
+    color: ${colors.pink};
     text-decoration: none;
   }
 `

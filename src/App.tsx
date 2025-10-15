@@ -1,3 +1,4 @@
+import Banner from './components/Banner'
 import Header from './components/Header'
 
 import { GlobalCss } from './styles/styles'
@@ -9,6 +10,7 @@ function App() {
       <div>
         <Header />
       </div>
+      <Banner />
     </>
   )
 }
