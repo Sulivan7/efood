@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import bgImage from '../../assets/images/bg.png'
 import logo from '../../assets/images/logo.png'
 
@@ -9,7 +10,7 @@ const Header = () => (
       <nav>
         <S.Links>
           <S.LinkItem>
-            <a href="#">Restaurantes</a>
+            <Link to="/">Restaurantes</Link>
           </S.LinkItem>
           <S.LinkItem>
             <img src={logo} alt="Logo do site efood" />
