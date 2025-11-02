@@ -3,11 +3,11 @@ import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 
 import type { RootReducer } from '../../store'
-import CardPerfil from '../../Components/CardPerfil'
-import HeaderPerfil from '../../Components/HeaderPerfil'
-import Modal from '../../Components/Modal'
-import Payment from '../../Components/Payment'
-import Loader from '../../Components/Loader'
+import CardPerfil from '../../components/CardPerfil'
+import HeaderPerfil from '../../components/HeaderPerfil'
+import Modal from '../../components/Modal'
+import Payment from '../../components/Payment'
+import Loader from '../../components/Loader'
 
 import { Cards, Main } from '../../styles'
 

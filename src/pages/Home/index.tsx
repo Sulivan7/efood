@@ -1,8 +1,8 @@
 import { useGetRestaurantsQuery } from '../../services/api'
 
-import Card from '../../Components/Card'
-import Hero from '../../Components/Hero'
-import Loader from '../../Components/Loader'
+import Card from '../../components/Card'
+import Hero from '../../components/Hero'
+import Loader from '../../components/Loader'
 
 import { Cards, Main } from '../../styles'
 
