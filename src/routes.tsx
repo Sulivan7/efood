@@ -1,13 +1,15 @@
 import { Routes, Route } from 'react-router-dom'
 
 import Home from './pages/Home'
-import RestaurantsPerfil from './pages/RestaurantsPerfil'
+import Perfil from './pages/Perfil'
 
-const Rotas = () => (
-  <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/restaurant" element={<RestaurantsPerfil />} />
-  </Routes>
-)
+const Rotas = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/product/:id" element={<Perfil />} />
+    </Routes>
+  )
+}
 
 export default Rotas

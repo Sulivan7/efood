@@ -1,15 +1,34 @@
+import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
+import { Toaster } from 'react-hot-toast'
 
+import Footer from './Components/Footer'
+import Cart from './Components/Cart'
 import Rotas from './routes'
+import { store } from './store'
 
-import { GlobalCss } from './styles/styles'
+import { GlobalCSS } from './styles'
 
 function App() {
   return (
-    <BrowserRouter>
-      <GlobalCss />
-      <Rotas />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <GlobalCSS />
+        <Toaster
+          position="top-right"
+          toastOptions={{
+            style: {
+              background: '#333',
+              color: '#fff'
+            }
+          }}
+        />
+
+        <Rotas />
+        <Cart />
+        <Footer />
+      </BrowserRouter>
+    </Provider>
   )
 }
 

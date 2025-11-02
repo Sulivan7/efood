@@ -1,38 +1,37 @@
 import { Link } from 'react-router-dom'
-import { Container, SocialLinks } from './styles'
-import logo from '../../assets/images/logo.png'
-import facebookIcon from '../../assets/images/facebook-icon.png'
-import instagramIcon from '../../assets/images/instagram-icon.png'
-import xIcon from '../../assets/images/twitter-icon.png'
 
-const Footer = () => (
-  <Container>
-    <Link to="/">
-      <img src={logo} alt="Logo" />
-    </Link>
-    <SocialLinks>
-      <li>
-        <a href="#">
-          <img src={facebookIcon} alt="Facebook" />
+import logo from '../../assets/images/logo.svg'
+import instagram from '../../assets/images/instagram-icon.png'
+import facebook from '../../assets/images/facebook-icon.png'
+import twitter from '../../assets/images/x-icon.png'
+
+import * as S from './styles'
+
+const Footer = () => {
+  return (
+    <S.Footer>
+      <Link to="/">
+        <S.Logo src={logo} alt="Logo efood" />
+      </Link>
+      <S.SocialMedia>
+        <a href="/">
+          <img src={instagram} alt="" />
         </a>
-      </li>
-      <li>
-        <a href="#">
-          <img src={instagramIcon} alt="Instagram" />
+        <a href="/">
+          <img src={facebook} alt="" />
         </a>
-      </li>
-      <li>
-        <a href="#">
-          <img src={xIcon} alt="Twitter" />
+        <a href="/">
+          <img src={twitter} alt="" />
         </a>
-      </li>
-    </SocialLinks>
-    <p>
-      A efood é uma plataforma para divulgação de estabelecimentos, a
-      responsabilidade pela entrega, qualidade <br /> dos produtos é toda do
-      estabelecimento contratado.
-    </p>
-  </Container>
-)
+      </S.SocialMedia>
+
+      <S.Text>
+        A efood é uma plataforma para divulgação de estabelecimentos, a
+        responsabilidade pela entrega, qualidade dos produtos é toda do
+        estabelecimento contratado
+      </S.Text>
+    </S.Footer>
+  )
+}
 
 export default Footer

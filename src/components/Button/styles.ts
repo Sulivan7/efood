@@ -1,27 +1,16 @@
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { Colors } from '../../styles'
 
-import type { Props } from '.'
+type Props = {
+  clicked?: boolean
+}
 
-import { colors } from '../../styles/styles'
-
-export const ButtonContainer = styled.button<Props>`
-  background-color: ${({ variant }) =>
-    variant === 'primary' ? colors.peach : colors.pink};
-  color: ${({ variant }) =>
-    variant === 'primary' ? colors.pink : colors.peach};
+export const Button = styled.button<Props>`
+  background-color: ${Colors.salmon};
   border: none;
-  padding: 4px 6px;
   font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
-`
-
-export const ButtonLink = styled(Link)`
-  background-color: ${colors.pink};
-  color: ${colors.peach};
-  padding: 4px 6px;
-  font-size: 14px;
-  font-weight: bold;
-  text-decoration: none;
+  font-weight: 700;
+  color: ${Colors.beige};
+  padding: 4px 10px;
+  cursor: ${(Props) => (Props.clicked ? 'pointer' : 'default')};
 `

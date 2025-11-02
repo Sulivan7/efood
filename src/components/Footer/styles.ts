@@ -1,32 +1,33 @@
 import styled from 'styled-components'
-import { colors } from '../../styles/styles'
+import { Breakpoints, Colors } from '../../styles'
 
-export const Container = styled.footer`
-  background-color: ${colors.peach};
+export const Footer = styled.footer`
+  background-color: ${Colors.beige};
   width: 100%;
-  height: 300px;
-
-  img {
-    padding-top: 40px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  p {
-    padding-top: 80px;
-    text-align: center;
-    font-size: 10px;
-    font-weight: 400;
-    color: ${colors.pink};
-  }
+  height: 290px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
-export const SocialLinks = styled.ul`
-  display: flex;
-  justify-content: center;
+export const Logo = styled.img`
+  margin: 40px 0;
+`
 
-  img {
-    margin-right: 8px;
+export const SocialMedia = styled.div`
+  display: flex;
+  gap: 10px;
+`
+
+export const Text = styled.p`
+  font-weight: 400;
+  font-size: 10px;
+  width: 480px;
+  text-align: center;
+  margin-top: 60px;
+
+  @media (max-width: ${Breakpoints.mobile}) {
+    width: 100%;
+    font-size: 12px;
   }
 `
