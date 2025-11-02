@@ -55,26 +55,26 @@ const Payment = ({ active }: Props) => {
       numero: Yup.string().required('Campo obrigatório'),
       completo: Yup.string().required('Campo obrigatório'),
 
-      nomeCartao: Yup.string().when((values, schema) =>
+      nomeCartao: Yup.string().when((_, schema) =>
         !isDelivery ? schema.required('Campo obrigatório') : schema
       ),
-      numeroCartao: Yup.string().when((values, schema) =>
+      numeroCartao: Yup.string().when((_, schema) =>
         !isDelivery ? schema.required('Campo obrigatório') : schema
       ),
       cvvCartao: Yup.string()
-        .when((values, schema) =>
+        .when((_, schema) =>
           !isDelivery ? schema.required('Campo obrigatório') : schema
         )
         .min(3, 'CVV inválido')
         .max(3, 'CVV inválido'),
       mesCartao: Yup.string()
-        .when((values, schema) =>
+        .when((_, schema) =>
           !isDelivery ? schema.required('Campo obrigatório') : schema
         )
         .max(2, 'Mês inválido')
         .min(2, 'Mês inválido'),
       anoCartao: Yup.string()
-        .when((values, schema) =>
+        .when((_, schema) =>
           !isDelivery ? schema.required('Campo obrigatório') : schema
         )
         .max(2, 'Mês inválido')
