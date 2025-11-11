@@ -53,13 +53,25 @@ const Payment = ({ active }: Props) => {
         .max(9, 'CEP inválido')
         .required('Campo obrigatório'),
       numero: Yup.string().required('Campo obrigatório'),
-      completo: Yup.string().required('Campo obrigatório'),
+      completo: Yup.string().notRequired(),
 
       nomeCartao: Yup.string().when((_, schema) =>
         !isDelivery ? schema.required('Campo obrigatório') : schema
       ),
       numeroCartao: Yup.string().when((_, schema) =>
-        !isDelivery ? schema.required('Campo obrigatório') : schema
+        !isDelivery
+          ? schema
+              .required('Campo obrigatório')
+              .test(
+                'is-valid-card',
+                'Número de cartão deve ter 16 dígitos',
+                (value) => {
+                  if (!value) return false
+                  const digits = value.replace(/\D/g, '')
+                  return digits.length === 16
+                }
+              )
+          : schema
       ),
       cvvCartao: Yup.string()
         .when((_, schema) =>
@@ -100,7 +112,9 @@ const Payment = ({ active }: Props) => {
         payment: {
           card: {
             name: form.values.nomeCartao,
-            number: form.values.numeroCartao,
+            number: form.values.numeroCartao
+              ? form.values.numeroCartao.replace(/\D/g, '')
+              : form.values.numeroCartao,
             code: Number(form.values.cvvCartao),
             expires: {
               month: Number(form.values.mesCartao),

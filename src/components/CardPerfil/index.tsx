@@ -18,11 +18,8 @@ const CardPerfil = ({ imagem, titulo, descricao, onMaisDetalhes }: Props) => {
   return (
     <S.Container>
       <img src={imagem} alt="" />
-
       <S.Title>{titulo}</S.Title>
-
       <S.Description>{getDescricao(descricao)}</S.Description>
-
       <S.Button onClick={onMaisDetalhes}>Mais detalhes</S.Button>
     </S.Container>
   )

@@ -23,7 +23,7 @@ const HeaderPerfil = ({ type, cover, name }: Props) => {
 
   return (
     <S.Container>
-      <S.Header>
+      <S.Header className="container">
         <h4>Restaurantes</h4>
         <Link to="/">
           <img src={logo} alt="" />
@@ -34,9 +34,10 @@ const HeaderPerfil = ({ type, cover, name }: Props) => {
       </S.Header>
 
       <S.ImageContainer background={cover}>
-        <S.Title type="categoria">{type}</S.Title>
-
-        <S.Title type="titulo">{name}</S.Title>
+        <div className="container">
+          <S.Title type="categoria">{type}</S.Title>
+          <S.Title type="titulo">{name}</S.Title>
+        </div>
       </S.ImageContainer>
     </S.Container>
   )

@@ -12,14 +12,14 @@ type PropsTitle = {
 
 export const Container = styled.header`
   width: 100%;
+  background-image: url(${background});
 `
 
 export const Header = styled.div`
   height: 180px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  background-image: url(${background});
+  justify-content: space-between;
 
   h4.carrinho {
     cursor: pointer;
@@ -39,8 +39,12 @@ export const ImageContainer = styled.div<Props>`
   background-size: cover;
   background-position: center;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 `
 
 export const Title = styled.h1<PropsTitle>`
@@ -48,11 +52,10 @@ export const Title = styled.h1<PropsTitle>`
   font-weight: ${(props) => (props.type === 'categoria' ? 100 : 900)};
   font-size: 32px;
   color: ${Colors.white};
-  padding: ${(props) =>
-    props.type === 'categoria' ? '25px 170px' : '32px 170px'};
+  padding: ${(props) => (props.type === 'categoria' ? '25px 0px' : '32px 0px')};
 
   @media (max-width: ${Breakpoints.mobile}) {
     padding: ${(props) =>
-      props.type === 'categoria' ? '25px 50px' : '32px 50px'};
+      props.type === 'categoria' ? '25px 0px' : '32px 0px'};
   }
 `
