@@ -27,6 +27,14 @@ export const Header = styled.div`
 
   @media (max-width: ${Breakpoints.mobile}) {
     flex-direction: column;
+
+    h4 {
+      padding: 20px;
+    }
+  }
+
+  @media (max-width: ${Breakpoints.tablet}) {
+    justify-content: space-around;
   }
 `
 
@@ -44,6 +52,14 @@ export const ImageContainer = styled.div<Props>`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @media (max-width: ${Breakpoints.mobile}) {
+      padding-left: 80px;
+    }
+
+    @media (max-width: ${Breakpoints.tablet}) {
+      padding-left: 50px;
+    }
   }
 `
 

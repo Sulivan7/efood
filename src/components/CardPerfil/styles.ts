@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Colors } from '../../styles'
 
 export const Container = styled.div`
-  max-width: 320px;
+  max-width: 300px;
   min-height: 338px;
   height: 100%;
   display: flex;
